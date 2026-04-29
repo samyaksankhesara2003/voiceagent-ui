@@ -1,8 +1,16 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import './Layout.css';
 
 export default function Layout({ children }) {
   const location = useLocation();
+  const navigate = useNavigate();
+  const { userEmail, logout } = useAuth();
+
+  function handleLogout() {
+    logout();
+    navigate('/login');
+  }
 
   return (
     <div className="layout">
@@ -12,12 +20,18 @@ export default function Layout({ children }) {
           <h1>Bright Smile Dental Clinic</h1>
         </div>
         <nav className="header-nav">
-          <Link to="/" className={`nav-link ${location.pathname === '/' ? 'nav-active' : ''}`}>
-            Book Appointment
-          </Link>
-          <Link to="/leads" className={`nav-link ${location.pathname === '/leads' ? 'nav-active' : ''}`}>
-            CRM Leads
-          </Link>
+          <div className="nav-links">
+            <Link to="/" className={`nav-link ${location.pathname === '/' ? 'nav-active' : ''}`}>
+              Book Appointment
+            </Link>
+            <Link to="/leads" className={`nav-link ${location.pathname === '/leads' ? 'nav-active' : ''}`}>
+              CRM Leads
+            </Link>
+          </div>
+          <div className="nav-user">
+            <span className="nav-email">{userEmail}</span>
+            <button className="nav-logout" onClick={handleLogout}>Logout</button>
+          </div>
         </nav>
       </header>
       <main className="layout-main">{children}</main>
