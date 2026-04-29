@@ -1,0 +1,141 @@
+.leads-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.leads-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.leads-header h2 {
+  margin: 0;
+  color: #1a3a5c;
+  font-size: 1.5rem;
+}
+
+.leads-subtitle {
+  color: #777;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.leads-count {
+  margin-left: auto;
+  background: #e8f0fe;
+  color: #1a73e8;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.leads-loading,
+.leads-error {
+  text-align: center;
+  padding: 3rem 0;
+  color: #666;
+  font-size: 1rem;
+}
+
+.leads-error {
+  color: #e74c3c;
+}
+
+.leads-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: white;
+  border-radius: 12px;
+  color: #888;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.leads-table-wrapper {
+  overflow-x: auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.leads-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.leads-table th {
+  text-align: left;
+  padding: 0.85rem 1rem;
+  background: #f8fafb;
+  color: #1a3a5c;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 2px solid #e0e8ef;
+}
+
+.leads-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #f0f0f0;
+  color: #333;
+  vertical-align: top;
+}
+
+.leads-table tbody tr:hover {
+  background: #f8fafb;
+}
+
+.lead-patient {
+  font-weight: 600;
+  color: #1a3a5c;
+  white-space: nowrap;
+}
+
+.lead-source {
+  background: #f0f0f0;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.lead-status {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-new {
+  background: #e8f0fe;
+  color: #1a73e8;
+}
+
+.status-contacted {
+  background: #fef3e0;
+  color: #e67e22;
+}
+
+.status-converted {
+  background: #e6f9ed;
+  color: #1a9e4a;
+}
+
+.lead-summary {
+  max-width: 300px;
+  line-height: 1.4;
+  color: #555;
+}
+
+.lead-date {
+  white-space: nowrap;
+  color: #888;
+  font-size: 0.85rem;
+}

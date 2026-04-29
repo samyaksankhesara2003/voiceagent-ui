@@ -1,0 +1,79 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f0f7fa;
+}
+
+.layout-header {
+  background: linear-gradient(135deg, #1a73e8, #0d5bbd);
+  color: white;
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.header-icon {
+  font-size: 2rem;
+}
+
+.layout-header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.header-subtitle {
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.nav-link:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.nav-active {
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.layout-main {
+  flex: 1;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.layout-footer {
+  text-align: center;
+  padding: 1rem;
+  color: #666;
+  font-size: 0.8rem;
+  border-top: 1px solid #dde6ed;
+}

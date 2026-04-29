@@ -1,0 +1,57 @@
+.transcript-panel {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  background: #f8fafb;
+  border: 1px solid #e0e8ef;
+  border-radius: 12px;
+  max-height: 350px;
+  min-height: 200px;
+}
+
+.transcript-empty {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+  padding: 2rem 0;
+}
+
+.transcript-entry {
+  margin-bottom: 0.75rem;
+}
+
+.transcript-role {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.transcript-text {
+  margin: 0.2rem 0 0;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.transcript-assistant .transcript-role {
+  color: #1a73e8;
+}
+
+.transcript-assistant .transcript-text {
+  background: #e8f0fe;
+  color: #1a3a5c;
+}
+
+.transcript-user .transcript-role {
+  color: #1a9e4a;
+  text-align: right;
+  display: block;
+}
+
+.transcript-user .transcript-text {
+  background: #e6f9ed;
+  color: #1a3a2a;
+  text-align: right;
+}

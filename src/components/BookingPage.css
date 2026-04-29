@@ -1,0 +1,84 @@
+.booking-page {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  color: #1a3a5c;
+  margin: 0 0 0.75rem;
+}
+
+.hero p {
+  color: #555;
+  font-size: 1.05rem;
+  max-width: 550px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.6;
+}
+
+.doctors-section h3 {
+  text-align: center;
+  color: #1a3a5c;
+  margin: 0 0 1.25rem;
+  font-size: 1.3rem;
+}
+
+.doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.doctor-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.doctor-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1a73e8, #0d5bbd);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 0 auto 0.75rem;
+}
+
+.doctor-card h4 {
+  margin: 0 0 0.25rem;
+  color: #1a3a5c;
+}
+
+.doctor-specialty {
+  color: #1a73e8;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.doctor-bio {
+  color: #777;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  margin: 0;
+}
