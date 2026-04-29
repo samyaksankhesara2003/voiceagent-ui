@@ -28,6 +28,21 @@ export async function fetchAppointmentByCallId(callId) {
   return data.appointment;
 }
 
+export async function fetchAppointments() {
+  const { data } = await api.get('/appointments');
+  return data.appointments;
+}
+
+export async function fetchPatients() {
+  const { data } = await api.get('/patients');
+  return data.patients;
+}
+
+export async function fetchCallDetails(callId) {
+  const { data } = await api.get(`/calls/${callId}`);
+  return data;
+}
+
 export async function fetchCrmLeads() {
   const { data } = await api.get('/crm-leads');
   return data.leads;

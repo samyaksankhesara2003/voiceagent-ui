@@ -1,32 +1,42 @@
 import { createContext, useContext, useState } from 'react';
 
-const ALLOWED_EMAIL = 'samyak@techuz.com';
-const STORAGE_KEY = 'voicepoc_auth_email';
+const ALLOWED_USERS = {
+  'samyak@techuz.com': 'user',
+  'admin@techuz.com': 'admin',
+};
+
+const STORAGE_KEY_EMAIL = 'voicepoc_auth_email';
+const STORAGE_KEY_ROLE = 'voicepoc_auth_role';
 
 const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
-  const [userEmail, setUserEmail] = useState(() => localStorage.getItem(STORAGE_KEY));
+  const [userEmail, setUserEmail] = useState(() => localStorage.getItem(STORAGE_KEY_EMAIL));
+  const [role, setRole] = useState(() => localStorage.getItem(STORAGE_KEY_ROLE));
 
   const isAuthenticated = !!userEmail;
 
   function login(email) {
-    if (email.trim().toLowerCase() !== ALLOWED_EMAIL) {
-      return false;
-    }
     const normalized = email.trim().toLowerCase();
-    localStorage.setItem(STORAGE_KEY, normalized);
+    const userRole = ALLOWED_USERS[normalized];
+    if (!userRole) return null;
+
+    localStorage.setItem(STORAGE_KEY_EMAIL, normalized);
+    localStorage.setItem(STORAGE_KEY_ROLE, userRole);
     setUserEmail(normalized);
-    return true;
+    setRole(userRole);
+    return userRole;
   }
 
   function logout() {
-    localStorage.removeItem(STORAGE_KEY);
+    localStorage.removeItem(STORAGE_KEY_EMAIL);
+    localStorage.removeItem(STORAGE_KEY_ROLE);
     setUserEmail(null);
+    setRole(null);
   }
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, userEmail, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, userEmail, role, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

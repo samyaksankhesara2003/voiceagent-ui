@@ -1,114 +1,126 @@
 .leads-page {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
 }
 
 .leads-header {
   display: flex;
-  align-items: baseline;
-  gap: 1rem;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
 }
 
 .leads-header h2 {
   margin: 0;
-  color: #1a3a5c;
-  font-size: 1.5rem;
-}
-
-.leads-subtitle {
-  color: #777;
-  font-size: 0.9rem;
-  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1a2332;
 }
 
 .leads-count {
-  margin-left: auto;
   background: #e8f0fe;
   color: #1a73e8;
-  padding: 0.25rem 0.75rem;
-  border-radius: 999px;
-  font-size: 0.8rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
   font-weight: 600;
 }
 
 .leads-loading,
-.leads-error {
-  text-align: center;
-  padding: 3rem 0;
-  color: #666;
-  font-size: 1rem;
-}
-
-.leads-error {
-  color: #e74c3c;
-}
-
+.leads-error,
 .leads-empty {
+  padding: 3rem 1.5rem;
   text-align: center;
-  padding: 3rem 1rem;
-  background: white;
+  color: #5f6b7a;
+  font-size: 0.95rem;
+  background: #fff;
   border-radius: 12px;
-  color: #888;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.leads-error {
+  color: #dc2626;
+  background: #fef2f2;
 }
 
 .leads-table-wrapper {
-  overflow-x: auto;
-  background: white;
+  background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
 }
 
 .leads-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.9rem;
+}
+
+.leads-table thead {
+  background: #f8f9fb;
+}
+
+.leads-table thead tr {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 0.8fr 2fr 1fr 0.8fr;
+  align-items: center;
 }
 
 .leads-table th {
-  text-align: left;
-  padding: 0.85rem 1rem;
-  background: #f8fafb;
-  color: #1a3a5c;
-  font-weight: 700;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  border-bottom: 2px solid #e0e8ef;
-}
-
-.leads-table td {
   padding: 0.75rem 1rem;
-  border-bottom: 1px solid #f0f0f0;
-  color: #333;
-  vertical-align: top;
+  text-align: left;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #5f6b7a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #e8ecf1;
 }
 
-.leads-table tbody tr:hover {
-  background: #f8fafb;
+.leads-table th:last-child {
+  text-align: center;
+}
+
+/* Row as a clickable div inside a single td */
+.lead-row-group td {
+  padding: 0 !important;
+}
+
+.lead-row {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 0.8fr 2fr 1fr 0.8fr;
+  align-items: center;
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f2f5;
+  transition: background 0.15s ease;
+}
+
+.lead-row:hover {
+  background: #f8fafc;
+}
+
+.lead-row-expanded {
+  background: #f8fafc;
 }
 
 .lead-patient {
   font-weight: 600;
-  color: #1a3a5c;
-  white-space: nowrap;
+  color: #1a2332;
+  font-size: 0.88rem;
 }
 
 .lead-source {
-  background: #f0f0f0;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.8rem;
-  color: #555;
+  display: inline-block;
+  background: #f0f2f5;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  color: #5f6b7a;
 }
 
 .lead-status {
   display: inline-block;
-  padding: 0.2rem 0.6rem;
-  border-radius: 999px;
-  font-size: 0.8rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: capitalize;
 }
@@ -119,23 +131,170 @@
 }
 
 .status-contacted {
-  background: #fef3e0;
-  color: #e67e22;
+  background: #fffbeb;
+  color: #d97706;
 }
 
 .status-converted {
-  background: #e6f9ed;
-  color: #1a9e4a;
+  background: #ecfdf5;
+  color: #059669;
 }
 
 .lead-summary {
-  max-width: 300px;
+  color: #5f6b7a;
+  font-size: 0.85rem;
   line-height: 1.4;
-  color: #555;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: default;
 }
 
 .lead-date {
+  color: #8896a6;
+  font-size: 0.82rem;
   white-space: nowrap;
-  color: #888;
+}
+
+.lead-call-record {
+  text-align: center;
+}
+
+.call-record-btn {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: #e8f0fe;
+  color: #1a73e8;
+  transition: all 0.15s ease;
+}
+
+.call-record-btn:hover {
+  background: #1a73e8;
+  color: #fff;
+}
+
+.call-record-active {
+  background: #1a73e8;
+  color: #fff;
+}
+
+/* Call Details Panel */
+.call-details {
+  border-top: 1px solid #e8ecf1;
+  background: #f8f9fb;
+  padding: 1.25rem 1.5rem;
+}
+
+.call-details-loading,
+.call-details-empty,
+.call-details-error {
+  margin: 0;
+  color: #5f6b7a;
+  font-size: 0.88rem;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.call-details-error {
+  color: #dc2626;
+}
+
+.call-details-grid {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.call-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.call-detail-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #5f6b7a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.call-detail-value {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #1a2332;
+}
+
+.call-section {
+  margin-bottom: 1.25rem;
+}
+
+.call-section:last-child {
+  margin-bottom: 0;
+}
+
+.call-section h4 {
+  margin: 0 0 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1a2332;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.call-audio {
+  width: 100%;
+  max-width: 400px;
+  height: 36px;
+  border-radius: 8px;
+}
+
+.call-text {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #3a4555;
+  line-height: 1.6;
+  background: #fff;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #e8ecf1;
+}
+
+.call-transcript {
+  background: #fff;
+  border: 1px solid #e8ecf1;
+  border-radius: 8px;
+  padding: 0.75rem;
+  max-height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.transcript-msg {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
   font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.transcript-role {
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  min-width: 36px;
+  color: #1a73e8;
+}
+
+.transcript-user .transcript-role {
+  color: #059669;
+}
+
+.transcript-text {
+  color: #3a4555;
 }

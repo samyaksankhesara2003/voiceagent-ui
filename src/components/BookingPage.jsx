@@ -62,9 +62,11 @@ export default function BookingPage() {
               <div className="doctor-avatar">
                 {doc.name.split(' ').map((n) => n[0]).join('')}
               </div>
-              <h4>{doc.name}</h4>
-              <p className="doctor-specialty">{doc.specialty}</p>
-              {doc.bio && <p className="doctor-bio">{doc.bio}</p>}
+              <div className="doctor-info">
+                <h4>{doc.name}</h4>
+                <span className="doctor-specialty">{doc.specialty}</span>
+                {doc.bio && <p className="doctor-bio">{doc.bio}</p>}
+              </div>
             </div>
           ))}
         </div>

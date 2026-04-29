@@ -1,0 +1,67 @@
+.doctors-page {
+}
+
+.doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.doctor-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  transition: box-shadow 0.2s ease;
+}
+
+.doctor-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1a73e8, #4a9af5);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.doctor-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.doctor-name {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a2332;
+}
+
+.doctor-specialty {
+  display: inline-block;
+  margin-top: 0.25rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: #e8f0fe;
+  color: #1a73e8;
+}
+
+.doctor-bio {
+  margin: 0.5rem 0 0;
+  font-size: 0.82rem;
+  color: #5f6b7a;
+  line-height: 1.5;
+}

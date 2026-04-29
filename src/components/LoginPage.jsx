@@ -6,11 +6,11 @@ import './LoginPage.css';
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
-  const { isAuthenticated, login } = useAuth();
+  const { isAuthenticated, role, login } = useAuth();
   const navigate = useNavigate();
 
   if (isAuthenticated) {
-    navigate('/', { replace: true });
+    navigate(role === 'admin' ? '/leads' : '/', { replace: true });
     return null;
   }
 
@@ -21,9 +21,9 @@ export default function LoginPage() {
       setError('Please enter your email address.');
       return;
     }
-    const success = login(email);
-    if (success) {
-      navigate('/', { replace: true });
+    const userRole = login(email);
+    if (userRole) {
+      navigate(userRole === 'admin' ? '/leads' : '/', { replace: true });
     } else {
       setError('Access denied. Only authorized emails can sign in.');
     }

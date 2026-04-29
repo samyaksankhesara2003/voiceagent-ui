@@ -1,0 +1,113 @@
+.appt-list-page {
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.page-header h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1a2332;
+}
+
+.page-count {
+  background: #e8f0fe;
+  color: #1a73e8;
+  padding: 0.2rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.page-loading,
+.page-error,
+.page-empty {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  color: #5f6b7a;
+  font-size: 0.95rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.page-error {
+  color: #dc2626;
+  background: #fef2f2;
+}
+
+.table-container {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table thead {
+  background: #f8f9fb;
+}
+
+.data-table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #5f6b7a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #e8ecf1;
+}
+
+.data-table td {
+  padding: 0.85rem 1rem;
+  font-size: 0.88rem;
+  color: #3a4555;
+  border-bottom: 1px solid #f0f2f5;
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.cell-primary {
+  font-weight: 600;
+  color: #1a2332;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.badge-confirmed {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.badge-cancelled {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.badge-pending {
+  background: #fffbeb;
+  color: #d97706;
+}

@@ -1,84 +1,125 @@
 .booking-page {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 2rem;
 }
 
 .hero {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  padding: 2.5rem 2rem;
   text-align: center;
-  padding: 2rem 1rem;
 }
 
 .hero h2 {
-  font-size: 2rem;
-  color: #1a3a5c;
-  margin: 0 0 0.75rem;
+  font-size: 1.6rem;
+  color: #1a2332;
+  margin: 0 0 0.5rem;
+  font-weight: 700;
 }
 
 .hero p {
-  color: #555;
-  font-size: 1.05rem;
-  max-width: 550px;
+  color: #5f6b7a;
+  font-size: 0.95rem;
+  max-width: 500px;
   margin: 0 auto 1.5rem;
   line-height: 1.6;
 }
 
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: #1a73e8;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.btn-primary:hover {
+  background: #1565d8;
+}
+
+.btn-lg {
+  padding: 0.85rem 1.75rem;
+  font-size: 1rem;
+}
+
 .doctors-section h3 {
-  text-align: center;
-  color: #1a3a5c;
-  margin: 0 0 1.25rem;
-  font-size: 1.3rem;
+  color: #1a2332;
+  margin: 0 0 1rem;
+  font-size: 1.15rem;
+  font-weight: 700;
 }
 
 .doctors-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
 }
 
 .doctor-card {
-  background: white;
+  background: #fff;
   border-radius: 12px;
-  padding: 1.5rem;
-  text-align: center;
+  padding: 1.25rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: box-shadow 0.2s ease;
 }
 
 .doctor-card:hover {
-  transform: translateY(-2px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .doctor-avatar {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #1a73e8, #0d5bbd);
-  color: white;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #1a73e8, #4a9af5);
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 1.2rem;
-  margin: 0 auto 0.75rem;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.doctor-info {
+  flex: 1;
+  min-width: 0;
 }
 
 .doctor-card h4 {
-  margin: 0 0 0.25rem;
-  color: #1a3a5c;
+  margin: 0;
+  color: #1a2332;
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
 .doctor-specialty {
-  color: #1a73e8;
-  font-size: 0.85rem;
+  display: inline-block;
+  margin: 0.2rem 0 0;
+  padding: 0.1rem 0.5rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
   font-weight: 600;
-  margin: 0 0 0.5rem;
+  background: #e8f0fe;
+  color: #1a73e8;
 }
 
 .doctor-bio {
-  color: #777;
-  font-size: 0.8rem;
+  color: #5f6b7a;
+  font-size: 0.78rem;
   line-height: 1.4;
-  margin: 0;
+  margin: 0.35rem 0 0;
 }
