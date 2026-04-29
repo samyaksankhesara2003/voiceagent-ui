@@ -7,10 +7,22 @@ export default function VoiceAgent({
   transcript,
   isSpeaking,
   onEndCall,
+  doctor,
 }) {
   return (
     <div className="voice-agent">
       <div className="voice-agent-header">
+        {doctor && (
+          <div className="voice-doctor-info">
+            <div className="voice-doctor-avatar">
+              {doctor.name.split(' ').map((n) => n[0]).join('')}
+            </div>
+            <div>
+              <div className="voice-doctor-name">Booking with {doctor.name}</div>
+              <div className="voice-doctor-specialty">{doctor.specialty}</div>
+            </div>
+          </div>
+        )}
         <CallStatus status={callStatus} />
       </div>
 

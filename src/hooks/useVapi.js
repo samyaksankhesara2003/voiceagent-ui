@@ -11,6 +11,7 @@ export function useVapi() {
   const [transcript, setTranscript] = useState([]);
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [callId, setCallId] = useState(null);
+  const [selectedDoctor, setSelectedDoctor] = useState(null);
 
   // Initialize Vapi lazily (only when starting a call)
   const getVapi = useCallback(() => {
@@ -41,7 +42,7 @@ export function useVapi() {
     }
   }, []);
 
-  const startCall = useCallback(async () => {
+  const startCall = useCallback(async (doctor) => {
     const vapi = getVapi();
     if (!vapi) {
       console.error('Vapi SDK not available');
@@ -51,15 +52,28 @@ export function useVapi() {
     setCallStatus('connecting');
     setTranscript([]);
     setCallId(null);
+    setSelectedDoctor(doctor);
+
+
+    const today = new Date().toISOString().split('T')[0];
 
     try {
-      const call = await vapi.start(ASSISTANT_ID);
+      const call = await vapi.start(ASSISTANT_ID, {
+        variableValues: {
+          doctorName: doctor.name,
+          doctorId: String(doctor.id),
+          doctorSpecialty: doctor.specialty,
+          currentDate: today,
+
+        },
+      });
       if (call?.id) {
         setCallId(call.id);
       }
     } catch (err) {
       console.error('Failed to start call:', err);
       setCallStatus('idle');
+      setSelectedDoctor(null);
     }
   }, [getVapi]);
 
@@ -72,7 +86,8 @@ export function useVapi() {
     setTranscript([]);
     setCallId(null);
     setIsSpeaking(false);
+    setSelectedDoctor(null);
   }, []);
 
-  return { callStatus, transcript, isSpeaking, callId, startCall, endCall, resetCall };
+  return { callStatus, transcript, isSpeaking, callId, selectedDoctor, startCall, endCall, resetCall };
 }
