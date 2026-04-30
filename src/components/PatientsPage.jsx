@@ -33,7 +33,6 @@ export default function PatientsPage() {
               <tr>
                 <th>Name</th>
                 <th>Phone</th>
-                <th>Email</th>
                 <th>Registered</th>
               </tr>
             </thead>
@@ -42,7 +41,6 @@ export default function PatientsPage() {
                 <tr key={p.id}>
                   <td className="cell-primary">{p.name}</td>
                   <td>{p.phone || '—'}</td>
-                  <td>{p.email || '—'}</td>
                   <td>{formatDate(p.created_at)}</td>
                 </tr>
               ))}
