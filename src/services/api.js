@@ -33,6 +33,11 @@ export async function fetchAppointments() {
   return data.appointments;
 }
 
+export async function deleteAppointment(id) {
+  const { data } = await api.delete(`/appointments/${id}`);
+  return data;
+}
+
 export async function fetchPatients() {
   const { data } = await api.get('/patients');
   return data.patients;
